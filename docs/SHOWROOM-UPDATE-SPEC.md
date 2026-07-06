@@ -21,14 +21,14 @@ Check upstream at: `~/devel/git/agDv2/showroom/roles/ocp4_workload_showroom/defa
 
 ## Files to Update
 
-### Ansible Example
+### OpenShift Challenge
 
 | File | What to Update |
 |------|----------------|
-| `examples/ansible/playbooks/roles/deploy-showroom/defaults/main.yml` | Image versions, chart version |
-| `examples/ansible/playbooks/roles/deploy-showroom/tasks/main.yml` | Helm values structure (if changed) |
+| `challenges/openshift/playbooks/roles/deploy-showroom/defaults/main.yml` | Image versions, chart version |
+| `challenges/openshift/playbooks/roles/deploy-showroom/tasks/main.yml` | Helm values structure (if changed) |
 
-### Helm Example
+### Helm Reference
 
 | File | What to Update |
 |------|----------------|
@@ -42,7 +42,7 @@ Check upstream at: `~/devel/git/agDv2/showroom/roles/ocp4_workload_showroom/defa
 ```bash
 # Compare upstream with our ansible role
 diff ~/devel/git/agDv2/showroom/roles/ocp4_workload_showroom/defaults/main.yaml \
-     ~/devel/field-content/examples/ansible/playbooks/roles/deploy-showroom/defaults/main.yml
+     ~/devel/field-content/challenges/openshift/playbooks/roles/deploy-showroom/defaults/main.yml
 ```
 
 ### 2. Update Image Versions
@@ -50,7 +50,7 @@ diff ~/devel/git/agDv2/showroom/roles/ocp4_workload_showroom/defaults/main.yaml 
 Key variables to sync from upstream `defaults/main.yaml`:
 
 ```yaml
-# In ansible example: examples/ansible/playbooks/roles/deploy-showroom/defaults/main.yml
+# In OpenShift challenge: challenges/openshift/playbooks/roles/deploy-showroom/defaults/main.yml
 showroom_content_image: quay.io/rhpds/showroom-content:vX.X.X
 showroom_terminal_image: quay.io/rhpds/openshift-showroom-terminal-ocp:latest
 
@@ -63,7 +63,7 @@ showroom:
 ### 3. Check Helm Values Structure
 
 If upstream `tasks/deploy_showroom.yaml` changes the `release_values` structure, update:
-- `examples/ansible/playbooks/roles/deploy-showroom/tasks/main.yml`
+- `challenges/openshift/playbooks/roles/deploy-showroom/tasks/main.yml`
 
 ### 4. Test Deployment
 

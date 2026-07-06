@@ -1,9 +1,9 @@
-# Ansible Example - GitOps Configuration
+# OpenShift Challenge Environment
 # Installs Web Terminal operator, deploys a sample application, and Showroom lab guide
 
 # Job configuration
 job:
-  name: ansible-demo
+  name: openshift-challenge
   ttlSecondsAfterFinished: 600
   restartPolicy: Never
 
@@ -16,11 +16,9 @@ namespace:
 # Git repository containing your Ansible playbooks
 ansible:
   repository:
-    # IMPORTANT: Update this to point to YOUR playbook repository
-    url: "https://github.com/rhpds/field-sourced-content-template"
+    url: "https://github.com/open-tech-quest/challenge-provisioning"
     branch: "main"
-    # Path within the repo to the playbooks directory
-    path: "examples/ansible/playbooks"
+    path: "challenges/openshift/playbooks"
 
   # Main playbook to execute
   playbook: "site.yml"

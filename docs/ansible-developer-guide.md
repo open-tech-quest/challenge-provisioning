@@ -308,5 +308,5 @@ my-demo/
 ## Getting Help
 
 - Check the [kubernetes.core collection docs](https://docs.ansible.com/ansible/latest/collections/kubernetes/core/)
-- Review the example in `examples/ansible/`
+- Review the OpenShift challenge provisioning in `challenges/openshift/`
 - Look at the test playbook in `tests/ansible-test/site.yml`

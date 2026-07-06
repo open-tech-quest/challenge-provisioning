@@ -25,7 +25,8 @@ Use ArgoCD sync waves to control execution order.
 | Directory | Purpose |
 |-----------|---------|
 | `roles/ocp4_workload_field_content/` | Main workload role |
-| `examples/` | Working examples (helm, ansible) |
+| `challenges/` | Challenge environment provisioning (one per type) |
+| `examples/` | Reference patterns (helm) |
 | `docs/` | Developer guides and architecture diagrams |
 
 ## Variable Naming

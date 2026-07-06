@@ -1,4 +1,4 @@
-# Field Content - Session Summary
+# Challenge Provisioning - Session Summary
 
 ## Current Status
 
@@ -7,8 +7,8 @@
 | Component | Status |
 |-----------|--------|
 | `ocp4_workload_field_content` role | ✅ Working |
-| Helm example | ✅ Tested |
-| Ansible example | ✅ Tested |
+| Helm reference (`examples/helm/`) | ✅ Tested |
+| OpenShift challenge (`challenges/openshift/`) | ✅ Tested |
 
 ## Architecture Change (2025-01-19)
 
