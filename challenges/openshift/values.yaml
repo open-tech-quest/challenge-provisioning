@@ -93,5 +93,24 @@ syncWave:
 
 # Values injected by field content workload
 deployer:
-  domain: ""
-  apiUrl: ""
+    apiUrl: https://api.cluster.example.com:6443
+    domain: apps.cluster.cluster.example.com
+gitops:
+    path: challenges/openshift
+    repoURL: https://github.com/open-tech-quest/challenge-provisioning.git
+    revision: main
+litemaas:
+    apiKey: null
+    apiUrl: null
+    enabled: true
+    model: llama-scout-17b
+
+multi_user:
+    create_multi_user: true
+    num_users: 5
+    users:
+    -   username: user1
+    -   username: user2
+    -   username: user3
+    -   username: user4
+    -   username: user5
