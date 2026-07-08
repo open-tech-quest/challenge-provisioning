@@ -19,7 +19,7 @@ spec:
       - resources-finalizer.argocd.argoproj.io
     spec:
       destination:
-        name: ""
+        name: "in-cluster"
         namespace: "{{`{{ user }}`}}-workload"
         server: 'https://kubernetes.default.svc'
       project: default
