@@ -13,7 +13,7 @@ spec:
 {{- end }}
   template:
     metadata:
-      name: "{{`{{ user }}`}}-workload"
+      name: "{{`{{ user }}`}}-apps"
       namespace: openshift-gitops
       finalizers:
       - resources-finalizer.argocd.argoproj.io
