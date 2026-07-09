@@ -19,7 +19,7 @@ spec:
       - resources-finalizer.argocd.argoproj.io
     spec:
       destination:
-        namespace: "{{`{{ user }}`}}-workload"
+        namespace: "{{`{{ user }}`}}-apps"
         server: 'https://kubernetes.default.svc'
       project: default
       syncPolicy:
@@ -31,7 +31,7 @@ spec:
       source:
         repoURL: https://github.com/open-tech-quest/challenge-provisioning.git
         targetRevision: main
-        path: challenges/openshift/per-user/workload
+        path: challenges/openshift/per-user/apps
         helm:
           values: |
             namespacePermissions:
