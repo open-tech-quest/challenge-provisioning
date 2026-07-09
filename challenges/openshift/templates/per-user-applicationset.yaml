@@ -1,3 +1,4 @@
+{{- if .Values.multi_user }}
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
@@ -37,3 +38,4 @@ spec:
             namespacePermissions:
               user: "{{`{{ user }}`}}"
               role: admin
+{{- end }}
