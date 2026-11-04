@@ -23,6 +23,11 @@ spec:
         app: nginx-example
         deployment: nginx-example
     spec:
+      initContainers:
+        - name: nginx-example-init
+          image: quay.io/open-tech-quest/openshift-nginx-demo-app-init:1793794591
+          resources: {}
+          imagePullPolicy: Always
       containers:
         - name: nginx-example
           image: quay.io/open-tech-quest/openshift-nginx-demo-app:1793794591
