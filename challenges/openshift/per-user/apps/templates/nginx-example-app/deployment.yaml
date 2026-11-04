@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: nginx-example
-          image: quay.io/openshift-examples/otq-openshift/nginx-example-app:202511030852
+          image: quay.io/open-tech-quest/openshift-nginx-demo-app:1793794591
           ports:
             - containerPort: 8080
               protocol: TCP
