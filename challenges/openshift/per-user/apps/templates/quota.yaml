@@ -10,4 +10,4 @@ spec:
     requests.cpu: '2'
     requests.memory: 4Gi
     requests.storage: 5Gi
-    persistentvolumeclaims: '2'
+    persistentvolumeclaims: '5'
