@@ -6,7 +6,7 @@ metadata:
   labels:
     demo.redhat.com/application: "openshift-challenge"
 spec:
-  backgroundColor: '#ce7c00'
+  backgroundColor: '#4694EA'
   color: '#fff'
   location: BannerBottom
-  text: "Welcome to red.ht/otq-ocp1 - Here is the login challenge flag: zai3wieXe8wohPho"
+  text: "Welcome to red.ht/otq-fusion-hci - Here is the login challenge flag: ohX0ohphiph9aeke"
