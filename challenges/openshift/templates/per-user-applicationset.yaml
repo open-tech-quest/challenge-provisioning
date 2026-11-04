@@ -30,8 +30,8 @@ spec:
           prune: false
           selfHeal: false
       source:
-        repoURL: https://github.com/open-tech-quest/challenge-provisioning.git
-        targetRevision: main
+        repoURL: {{ .Values.gitops.repoURL }}
+        targetRevision: {{ .Values.gitops.revision }}
         path: challenges/openshift/per-user/apps
         helm:
           values: |
