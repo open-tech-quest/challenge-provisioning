@@ -9,5 +9,5 @@ spec:
     pods: '4'
     requests.cpu: '2'
     requests.memory: 4Gi
-    requests.storage: 1Gi
+    requests.storage: 5Gi
     persistentvolumeclaims: '2'
