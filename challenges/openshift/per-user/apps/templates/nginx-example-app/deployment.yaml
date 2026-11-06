@@ -34,7 +34,7 @@ spec:
               memory: "256M"
             requests:
               cpu: "1"
-              memory: "10M"
+              memory: "100M"
       containers:
         - name: nginx-example
           image: quay.io/open-tech-quest/openshift-nginx-demo-app:1793794591
