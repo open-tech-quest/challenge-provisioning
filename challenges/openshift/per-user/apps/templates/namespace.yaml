@@ -3,6 +3,7 @@ kind: Namespace
 metadata:
   labels:
      argocd.argoproj.io/managed-by: {{ .Values.namespacePermissions.user }}-gitops
+     open-test-quest/user-namespace: "true"
   creationTimestamp: null
   name: {{ .Values.namespacePermissions.user }}-apps
 spec: {}
