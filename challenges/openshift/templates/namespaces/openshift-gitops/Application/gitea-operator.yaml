@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitea-operator
+  namespace: openshift-gitops
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: OLMDeploy
+    repoURL: https://github.com/rhpds/gitea-operator.git
+    targetRevision: v2.3.2
