@@ -1,0 +1,9 @@
+apiVersion: data-protection.isf.ibm.com/v1alpha1
+kind: PolicyAssignment
+metadata:
+  name: otq-production
+  namespace: ibm-spectrum-fusion-ns
+spec:
+  application: otq-production
+  backupPolicy: otq-production-backuppolicy
+  runNow: true

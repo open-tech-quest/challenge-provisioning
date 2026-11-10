@@ -2,6 +2,7 @@ apiVersion: data-protection.isf.ibm.com/v1alpha1
 kind: BackupPolicy
 metadata:
   name: otq-production-backuppolicy
+  namespace: ibm-spectrum-fusion-ns
 spec:
   backupStorageLocation: otq-backuplocation/otq-backuplocation
   provider: isf-backup-restore

@@ -1,8 +1,0 @@
-apiVersion: data-protection.isf.ibm.com/v1alpha1
-kind: Backup
-metadata:
-  name: acme-application-backup
-  namespace: otq-production
-spec:
-  application: otq-production
-  backupPolicy: demo-policy
