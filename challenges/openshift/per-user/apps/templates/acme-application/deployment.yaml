@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: acme-application
-          image: quay.io/open-tech-quest/openshift-nginx-demo-app/error:20261110T16223
+          image: quay.io/open-tech-quest/openshift-nginx-demo-app/error:20261110T162233
           ports:
             - containerPort: 8080
               protocol: TCP
