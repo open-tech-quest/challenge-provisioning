@@ -1,0 +1,9 @@
+apiVersion: helm.openshift.io/v1beta1
+kind: HelmChartRepository
+metadata:
+  name: open-tech-quest-helm
+spec:
+  connectionConfig:
+    url: 'https://open-tech-quest.github.io/openshift-python-mariadb/'
+  description: Open Tech Quay - Helm Repo
+  name: Open Tech Quay - Helm Repo
