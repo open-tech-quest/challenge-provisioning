@@ -16,6 +16,8 @@ spec:
     metadata:
       name: "{{`{{ user }}`}}-db"
       namespace: openshift-gitops
+      labels:
+        open-test-quest/user-namespace: "true"
       finalizers:
       - resources-finalizer.argocd.argoproj.io
     spec:
@@ -26,9 +28,9 @@ spec:
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
-        automated:
-          prune: false
-          selfHeal: false
+        # automated:
+        #   prune: false
+        #   selfHeal: false
       source:
         repoURL: {{ .Values.gitops.repoURL }}
         targetRevision: {{ .Values.gitops.revision }}
