@@ -1,6 +1,10 @@
 apiVersion: v1
 kind: Namespace
 metadata:
+  annotations:
+    openshift.io/description: "The DB project host a database for one of the challenges"
+    openshift.io/display-name: "{{ .Values.namespacePermissions.user }} DB Project"
+    openshift.io/requester: "{{ .Values.namespacePermissions.user }}"
   labels:
      open-test-quest/user-namespace: "true"
   creationTimestamp: null
