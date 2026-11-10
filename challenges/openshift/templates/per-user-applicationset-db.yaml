@@ -3,7 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: per-user
+  name: per-user-db
   namespace: openshift-gitops
 spec:
   generators:
@@ -14,13 +14,13 @@ spec:
 {{- end }}
   template:
     metadata:
-      name: "{{`{{ user }}`}}-apps"
+      name: "{{`{{ user }}`}}-db"
       namespace: openshift-gitops
       finalizers:
       - resources-finalizer.argocd.argoproj.io
     spec:
       destination:
-        namespace: "{{`{{ user }}`}}-apps"
+        namespace: "{{`{{ user }}`}}-db"
         server: 'https://kubernetes.default.svc'
       project: default
       syncPolicy:
@@ -32,7 +32,7 @@ spec:
       source:
         repoURL: {{ .Values.gitops.repoURL }}
         targetRevision: {{ .Values.gitops.revision }}
-        path: challenges/openshift/per-user/apps
+        path: challenges/openshift/per-user/db
         helm:
           values: |
             namespacePermissions:

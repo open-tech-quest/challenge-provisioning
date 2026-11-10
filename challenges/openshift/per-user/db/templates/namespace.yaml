@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+     open-test-quest/user-namespace: "true"
+  creationTimestamp: null
+  name: {{ .Values.namespacePermissions.user }}-db
+spec: {}
+status: {}
