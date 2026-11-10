@@ -3,7 +3,7 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: acme-application
-  namespace: {{ .Values.namespacePermissions.user }}-apps
+  namespace: otq-production
 spec:
   to:
     kind: Service
