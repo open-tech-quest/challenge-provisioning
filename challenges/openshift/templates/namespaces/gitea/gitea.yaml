@@ -1,0 +1,25 @@
+apiVersion: pfe.rhpds.com/v1
+kind: Gitea
+metadata:
+  name: gitea
+  namespace: gitea
+spec:
+  giteaSsl: true
+  giteaHostname: git.apps.elbe.redhat.ibmfusion.de
+  giteaImageTag: "28.3.0"
+
+  giteaAdminUser: admin
+  giteaAdminPassword: ""
+  giteaAdminPasswordLength: 32
+  giteaAdminEmail: admin@acme.org
+
+  giteaCreateUsers: false
+  # giteaGenerateUserFormat: ""
+  # giteaUserNumber: 1
+  # giteaUserPassword: openshift
+
+  giteaMigrateRepositories: true
+  giteaRepositoriesList:
+    - repo: https://github.com/open-tech-quest/devspaces-quarkus-app.git
+      name: devspaces-quarkus-app
+      private: false

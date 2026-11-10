@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: "Gitea Hosting"
+    openshift.io/display-name: "Gitea Hosting"
+    openshift.io/requester: rbohne@redhat.com
+  name: gitea
+spec: {}
