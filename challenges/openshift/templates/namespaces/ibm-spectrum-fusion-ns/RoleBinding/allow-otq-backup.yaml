@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: allow-otq
+  name: allow-otq-backup
   namespace: ibm-spectrum-fusion-ns
 roleRef:
   apiGroup: rbac.authorization.k8s.io
