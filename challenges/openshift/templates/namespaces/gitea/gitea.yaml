@@ -7,16 +7,17 @@ spec:
   giteaSsl: true
   giteaHostname: git.apps.elbe.redhat.ibmfusion.de
   giteaImageTag: "28.3.0"
-
+  
   giteaAdminUser: admin
   giteaAdminPassword: ""
   giteaAdminPasswordLength: 32
   giteaAdminEmail: admin@acme.org
 
-  giteaCreateUsers: false
-  # giteaGenerateUserFormat: ""
-  # giteaUserNumber: 1
-  # giteaUserPassword: openshift
+  giteaCreateUsers: true
+  giteaGenerateUserFormat: "otq-%d"
+  giteaUserNumber: 50
+  giteaUserPassword: ""
+  giteaUserPasswordLength: 32
 
   giteaMigrateRepositories: true
   giteaRepositoriesList:
