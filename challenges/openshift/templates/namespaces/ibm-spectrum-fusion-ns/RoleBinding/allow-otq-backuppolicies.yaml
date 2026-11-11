@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: backuppolicies-admin
+  namespace: ibm-spectrum-fusion-ns
+subjects:
+  - kind: Group
+    name: attendees
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: backuppolicies.data-protection.isf.ibm.com-v1alpha1-admin
+  apiGroup: rbac.authorization.k8s.io

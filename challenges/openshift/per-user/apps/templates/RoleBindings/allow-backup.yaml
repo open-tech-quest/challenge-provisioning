@@ -1,0 +1,51 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: deletebackuprequests-admin
+subjects:
+  - kind: Group
+    name: attendees
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: deletebackuprequests.data-protection.isf.ibm.com-v1alpha1-admin
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: recipes-admin
+subjects:
+  - kind: Group
+    name: attendees
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: recipes.spp-data-protection.isf.ibm.com-v1alpha1-admin
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: recoverbackupcrs-admin
+subjects:
+  - kind: Group
+    name: attendees
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: recoverbackupcrs.data-protection.isf.ibm.com-v1alpha1-admin
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: restores-admin
+subjects:
+  - kind: Group
+    name: attendees
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: restores.data-protection.isf.ibm.com-v1alpha1-admin
+  apiGroup: rbac.authorization.k8s.io
