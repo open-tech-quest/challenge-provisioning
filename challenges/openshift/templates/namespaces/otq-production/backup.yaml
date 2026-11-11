@@ -1,0 +1,8 @@
+apiVersion: data-protection.isf.ibm.com/v1alpha1
+kind: Backup
+metadata:
+  name: init-prod-backup
+  namespace: otq-production
+spec:
+  application: otq-production
+  backupPolicy: ibm-spectrum-fusion-ns/otq-production-backuppolicy
