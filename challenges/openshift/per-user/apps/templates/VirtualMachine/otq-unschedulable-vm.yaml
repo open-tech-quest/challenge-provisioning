@@ -15,16 +15,7 @@ spec:
       labels:
         app: otq-unschedulable-vm
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: kubernetes.io/hostname
-                    operator: In
-                    values:
-                      - otq-worker-07
-      domain:
+     domain:
         firmware:
           bootloader:
             efi:
