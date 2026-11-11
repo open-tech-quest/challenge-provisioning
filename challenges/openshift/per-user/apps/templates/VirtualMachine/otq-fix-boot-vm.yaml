@@ -62,7 +62,7 @@ spec:
               write_files:
                 - path: /home/tech-quest/challenge-flag.txt
                   encoding: gz+b64
-                  content: H4sIAAAAAAACAytyNgkzK4sqMMwPdMnKTY/gAgBs0HsDEQAAAA==
+                  content: H4sIAAAAAAACA6uqsLDIjAjJS88Pz3NK8gjjAgBIgR84EQAAAA==
                   owner: tech-quest:tech-quest
                   permissions: '0600'
                   defer: true
