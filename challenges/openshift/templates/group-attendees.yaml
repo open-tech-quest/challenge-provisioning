@@ -4,5 +4,5 @@ metadata:
   name: attendees
 users:
 {{- range .Values.multi_user.users }}
-  - user: {{ .username | quote }}
+  - {{ .username | quote }}
 {{- end }}
