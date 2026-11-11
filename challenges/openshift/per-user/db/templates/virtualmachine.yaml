@@ -1,0 +1,43 @@
+---
+# The enterprise database for this challenge. Deploy it to each team's
+# otq-X-db namespace. The VM has no namespace, so set one in your GitOps tooling.
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: otq-mariadb-vm
+  labels:
+    app: otq-mariadb
+spec:
+  runStrategy: Always
+  template:
+    metadata:
+      labels:
+        app: otq-mariadb
+    spec:
+      domain:
+        firmware:
+          bootloader:
+            efi:
+              secureBoot: false
+        cpu:
+          cores: 1
+        memory:
+          guest: 2Gi
+        devices:
+          disks:
+            - name: rootdisk
+              bootOrder: 1
+              disk:
+                bus: virtio
+          interfaces:
+            - name: default
+              masquerade: {}
+          rng: {}
+      networks:
+        - name: default
+          pod: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: rootdisk
+          containerDisk:
+            image: quay.io/open-tech-quest/otq-mariadb-vm:v1.0-disk
