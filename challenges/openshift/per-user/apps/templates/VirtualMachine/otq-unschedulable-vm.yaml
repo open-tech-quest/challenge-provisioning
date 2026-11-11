@@ -15,7 +15,7 @@ spec:
       labels:
         app: otq-unschedulable-vm
     spec:
-     domain:
+      domain:
         firmware:
           bootloader:
             efi:
