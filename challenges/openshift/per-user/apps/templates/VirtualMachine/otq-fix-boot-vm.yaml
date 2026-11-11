@@ -1,0 +1,68 @@
+---
+# Intentionally misconfigured: BIOS firmware, and a data disk boots before the
+# root disk. Teams fix both in the web console. The VM has no namespace,
+# so set one per team in your GitOps tooling.
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: otq-fix-boot-vm
+  labels:
+    app: otq-fix-boot-vm
+spec:
+  runStrategy: Halted
+  template:
+    metadata:
+      labels:
+        app: otq-fix-boot-vm
+    spec:
+      domain:
+        firmware:
+          bootloader:
+            bios: {}
+        cpu:
+          cores: 1
+        memory:
+          guest: 2Gi
+        devices:
+          disks:
+            - name: datadisk
+              bootOrder: 1
+              disk:
+                bus: virtio
+            - name: rootdisk
+              bootOrder: 2
+              disk:
+                bus: virtio
+            - name: cloudinitdisk
+              disk:
+                bus: virtio
+          interfaces:
+            - name: default
+              masquerade: {}
+          rng: {}
+      networks:
+        - name: default
+          pod: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: datadisk
+          containerDisk:
+            image: quay.io/open-tech-quest/otq-ocpv-fix-vm-boot:v1.0-datadisk
+        - name: rootdisk
+          containerDisk:
+            image: quay.io/open-tech-quest/otq-ocpv-fix-vm-boot:v1.0-disk
+        - name: cloudinitdisk
+          cloudInitNoCloud:
+            userData: |
+              #cloud-config
+              user: tech-quest
+              password: IfOJzqiqf3DQCrpV
+              chpasswd:
+                expire: false
+              write_files:
+                - path: /home/tech-quest/challenge-flag.txt
+                  encoding: gz+b64
+                  content: H4sIAAAAAAACAytyNgkzK4sqMMwPdMnKTY/gAgBs0HsDEQAAAA==
+                  owner: tech-quest:tech-quest
+                  permissions: '0600'
+                  defer: true
