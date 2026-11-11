@@ -1,0 +1,16 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: otq-unschedulable-vm
+  labels:
+    app: otq-unschedulable-vm
+spec:
+  to:
+    kind: Service
+    name: otq-unschedulable-vm
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

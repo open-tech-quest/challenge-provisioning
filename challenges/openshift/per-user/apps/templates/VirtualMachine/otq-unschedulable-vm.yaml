@@ -1,0 +1,53 @@
+---
+# Intentionally misconfigured: the required node affinity rule names a node
+# that doesn't exist. Teams remove it in the web console. The VM has no
+# namespace, so set one per team in your GitOps tooling.
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: otq-unschedulable-vm
+  labels:
+    app: otq-unschedulable-vm
+spec:
+  runStrategy: Always
+  template:
+    metadata:
+      labels:
+        app: otq-unschedulable-vm
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - otq-worker-07
+      domain:
+        firmware:
+          bootloader:
+            efi:
+              secureBoot: false
+        cpu:
+          cores: 1
+        memory:
+          guest: 2Gi
+        devices:
+          disks:
+            - name: rootdisk
+              bootOrder: 1
+              disk:
+                bus: virtio
+          interfaces:
+            - name: default
+              masquerade: {}
+          rng: {}
+      networks:
+        - name: default
+          pod: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: rootdisk
+          containerDisk:
+            image: quay.io/open-tech-quest/otq-ocpv-vm-unschedulable:v1.0-disk
